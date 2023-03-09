@@ -1,0 +1,8 @@
+
+
+
+-stripnativelibrarysections !jni/arm64-v8a/libe3f5.so,!jni/armeabi-v7a/libe3f5.so,!lib/arm64-v8a/libe3f5.so,!lib/armeabi-v7a/libe3f5.so,dummyfile
+
+
+-keepresourcefiles com/facetec/sdk/a-,com/facetec/sdk/b-,com/facetec/sdk/c-,com/facetec/sdk/d-,jni/arm64-v8a/libe3f5.so,jni/armeabi-v7a/libe3f5.so,lib/arm64-v8a/libe3f5.so,lib/armeabi-v7a/libe3f5.so
+
