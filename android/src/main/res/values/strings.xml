@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="FaceTec_accessibility_cancel_button">Cancelar</string>
+	<!--	<string name="FaceTec_accessibility_torch_button">Toggle Light</string>-->
+	<!--	<string name="FaceTec_action_accept_photo">Aceitar</string>-->
+
+	<string name="FaceTec_camera_permission_enable_camera">Habilitar câmera</string>
+	<string name="FaceTec_camera_permission_header">Habilitar câmera</string>
+	<!--	<string name="FaceTec_camera_permission_launch_settings">LAUNCH SETTINGS</string>-->
+	<string name="FaceTec_camera_permission_message_auth">Acesso à câmera não permitido.<br/>
+Verifique as configurações do seu dispositivo.</string>
+	<!--	<string name="FaceTec_camera_permission_message_enroll">Please click the button below to enable your selfie camera.</string>-->
+
+	<string name="FaceTec_feedback_center_face">Centralize seu rosto</string>
+	<string name="FaceTec_feedback_face_not_found">Enquadre seu rosto</string>
+	<string name="FaceTec_feedback_face_not_looking_straight_ahead">Olhe para frente</string>
+	<string name="FaceTec_feedback_face_not_upright">Mantenha a cabeça erguida</string>
+	<string name="FaceTec_feedback_hold_steady">Tente não mexer o celular</string>
+	<string name="FaceTec_feedback_move_phone_away">Afaste seu rosto do celular</string>
+	<string name="FaceTec_feedback_move_phone_closer">Aproxime o celular</string>
+	<string name="FaceTec_feedback_move_phone_to_eye_level">Olhe para a câmera</string>
+	<string name="FaceTec_feedback_use_even_lighting">Ilumine seu rosto por completo</string>
+
+	<string name="FaceTec_instructions_header_ready_1">Prepare-se para</string>
+	<string name="FaceTec_instructions_header_ready_2">a sua foto</string>
+	<string name="FaceTec_instructions_message_ready_1">Centralize seu rosto na moldura,</string>
+	<string name="FaceTec_instructions_message_ready_2">aperte em \'Começar\' e aproxime seu rosto</string>
+
+	<string name="FaceTec_presession_brighten_your_environment">Ambiente está muito escuro</string>
+	<string name="FaceTec_presession_conditions_too_bright">Ambiente está muito claro</string>
+	<string name="FaceTec_presession_eyes_straight_ahead">Olhe para a frente</string>
+	<string name="FaceTec_presession_frame_your_face">Enquadre o seu rosto</string>
+	<string name="FaceTec_presession_hold_steady_1">Não se mexa por: 1</string>
+	<string name="FaceTec_presession_hold_steady_2">Não se mexa por: 2</string>
+	<string name="FaceTec_presession_hold_steady_3">Não se mexa por: 3</string>
+	<string name="FaceTec_presession_neutral_expression">Expressão neutra, não sorria</string>
+	<string name="FaceTec_presession_position_face_straight_in_oval">Olhe para a frente</string>
+	<string name="FaceTec_presession_remove_dark_glasses">Não use óculos escuros</string>
+
+	<string name="FaceTec_result_facescan_upload_message">Verificando...</string>
+
+
+	<string name="FaceTec_retry_header">Vamos tentar novamente?</string>
+	<string name="FaceTec_retry_ideal_image_label">Exemplo</string>
+	<string name="FaceTec_retry_instruction_message_1">Expressão neutra, não sorria</string>
+	<string name="FaceTec_retry_instruction_message_2">Excesso de reflexos ou claridade</string>
+	<string name="FaceTec_retry_instruction_message_3">Imagem borrada, limpe a câmera</string>
+	<string name="FaceTec_retry_subheader_message">Ao tirar a foto, siga essas instruções:</string>
+	<string name="FaceTec_retry_your_image_label">Sua foto</string>
+
+
+	<string name="FaceTec_initializing_camera">Acessando a câmera...</string>
+
+	<string name="FaceTec_result_success_message">Sucesso!</string>
+
+	<string name="FaceTec_action_confirm">Confirmar dados</string>
+	<string name="FaceTec_action_continue">Continuar</string>
+	<string name="FaceTec_action_im_ready">Começar</string>
+	<string name="FaceTec_action_ok">OK</string>
+	<string name="FaceTec_action_retake_photo">Tirar outra foto</string>
+	<string name="FaceTec_action_take_photo">Tirar foto</string>
+	<string name="FaceTec_action_try_again">Tentar novamente</string>
+</resources>
