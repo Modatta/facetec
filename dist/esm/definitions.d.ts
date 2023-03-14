@@ -4,4 +4,7 @@ export interface FacetecPlugin {
     }): Promise<{
         value: string;
     }>;
+    setup(): Promise<{
+        value: string;
+    }>;
 }

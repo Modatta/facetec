@@ -1,27 +1,13 @@
 var capacitorFacetec = (function (exports, core) {
-    'use strict';
+	'use strict';
 
-    const Facetec = core.registerPlugin('Facetec', {
-        web: () => Promise.resolve().then(function () { return web; }).then(m => new m.FacetecWeb()),
-    });
+	const Facetec = core.registerPlugin('Facetec');
 
-    class FacetecWeb extends core.WebPlugin {
-        async echo(options) {
-            console.log('ECHO', options);
-            return options;
-        }
-    }
+	exports.Facetec = Facetec;
 
-    var web = /*#__PURE__*/Object.freeze({
-        __proto__: null,
-        FacetecWeb: FacetecWeb
-    });
+	Object.defineProperty(exports, '__esModule', { value: true });
 
-    exports.Facetec = Facetec;
-
-    Object.defineProperty(exports, '__esModule', { value: true });
-
-    return exports;
+	return exports;
 
 })({}, capacitorExports);
 //# sourceMappingURL=plugin.js.map
