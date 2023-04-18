@@ -1,7 +1,4 @@
-import com.modatta.plugins.facetec.Config
-import com.modatta.plugins.facetec.HttpClient
-import com.modatta.plugins.facetec.LivenessError
-import com.modatta.plugins.facetec.enqueuePostRequest
+import com.modatta.plugins.facetec.*
 import okhttp3.*
 import org.json.JSONObject
 import java.util.*
@@ -18,15 +15,14 @@ class Session(
     init {
         val payload = JSONObject(mapOf("livenessId" to id.value))
 
-        HttpClient.enqueuePostRequest(
+        HttpClient.enqueueGetRequest(
                 url = configuration.sessionUrl,
-                payload = payload,
                 deviceKeyIdentifier = configuration.deviceKeyIdentifier,
                 onFailure = {
                     onFailure(LivenessError.CreateSessionFailed("Unable to create session", it))
                 },
                 onResponse = {
-                    token = SessionToken(it.getString("token"))
+                    token = SessionToken(it.getString("sessionToken"))
                     onSuccess()
                 }
         )

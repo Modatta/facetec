@@ -1,10 +1,10 @@
 package com.modatta.plugins.facetec
 
-import com.getcapacitor.JSObject
 import com.getcapacitor.Plugin
 import com.getcapacitor.PluginCall
 import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
+import java.util.*
 
 @CapacitorPlugin(name = "Facetec")
 class FacetecPlugin : Plugin() {
@@ -13,8 +13,17 @@ class FacetecPlugin : Plugin() {
 
     @PluginMethod
     fun setup(call: PluginCall) {
+        if (implementation.getSession() == null) {// Método criado para verificar se a sessão foi criada
+            implementation.setup(call, bridge) //Adicionei o Bridge aqui como parâmetro
+            implementation.createSession("LIVENESS_ID-" + UUID.randomUUID(), call)
+        }else{
+            implementation.checkLiveness(call)
+        }
+    }
 
-        implementation.setup(call)
+    @PluginMethod
+    fun checkLiveness(call: PluginCall) {
+        implementation.checkLiveness(call)
     }
 }
 

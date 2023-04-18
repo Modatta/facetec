@@ -1,0 +1,220 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="1">
+        <view class="com.facetec.sdk.at"
+            android:id="@+id/zoomDialogBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </view>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/zoomDialogForeground"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <!-- Action button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/bottomLayout"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true">
+
+            <com.facetec.sdk.e
+                android:text=""
+                android:id="@+id/zoomDialogActionButton"
+                android:layout_height="60dp"
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:includeFontPadding="false"
+                android:textAlignment="center"
+                android:textColor="@drawable/facetec_button_text_state"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/facetec_button_background"
+                android:textAllCaps="false"
+                style="?android:attr/borderlessButtonStyle"
+                android:duplicateParentState="false" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottomLayout"
+            android:clipChildren="false">
+
+            <FrameLayout
+                android:id="@+id/centerContentFrameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/centerContentView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:clipChildren="false"
+                android:gravity="center"
+                android:weightSum="10">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2.25">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/iconImageView"
+                        android:layout_centerInParent="true"
+                        tools:ignore="ContentDescription"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"/>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/zoomDialogIconSubtext"
+                    android:layout_marginTop="0dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:textSize="10sp"
+                    android:includeFontPadding="false"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/zoomDialogHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:textSize="24sp"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/messageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="14sp"
+                    android:includeFontPadding="false"
+                    android:textColor="#ffffff"
+                    android:gravity="center"
+                    android:text=""/>
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/messageView2"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="14sp"
+                    android:includeFontPadding="false"
+                    android:textColor="#ffffff"
+                    android:gravity="center"
+                    android:text=""/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:layout_above="@id/bottomLayout">
+
+            <TextView
+                android:id="@+id/zoomDialogText4"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:text=""
+                android:textColor="#ffffff"
+                android:layout_centerInParent="true"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:textSize="14sp"
+                android:includeFontPadding="false"
+                android:lineSpacingMultiplier="1.1"
+                android:alpha="0.5"/>
+
+            <TextView
+                android:id="@+id/zoomDialogText3"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#ffffff"
+                android:layout_above="@id/zoomDialogText4"
+                android:layout_centerInParent="true"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:textSize="20sp"
+                android:includeFontPadding="false"
+                android:lineSpacingMultiplier="1.1"
+                android:gravity="center" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/guidanceTransitionView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"/>
+
+        <!-- Back button (down here so it renders on top always) -->
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/FaceTec_accessibility_cancel_button"
+            android:focusable="true"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

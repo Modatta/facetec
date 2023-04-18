@@ -23,8 +23,8 @@ class Facetec {
 
     var globals: GlobalVars = GlobalVars()
 
-    fun setup(promise: PluginCall) {
-        activity= (bridge as Bridge).context
+    fun setup(promise: PluginCall, bridge: Bridge) {
+        activity = bridge.context // Removi
 
 
         if (activity == null) {
@@ -34,11 +34,10 @@ class Facetec {
 
         val configuration = try {
             Config.create(
-                sessionUrl = "https://liveness.meupagador.com.br/session",
-                checkUrl = "https://liveness.meupagador.com.br/check",
+                sessionUrl = globals.BaseURL+"/session-token",
+                checkUrl = globals.BaseURL+"/liveness-3d",
                 deviceKeyIdentifier = globals.DeviceKeyIdentifier,
                 publicFaceScanEncryptionKey = globals.PublicFaceScanEncryptionKey,
-                productionKeyText = ""
             )
         } catch (exception: Exception) {
             promise.rejectWith(LivenessError.InvalidConfiguration(cause = exception))
@@ -91,6 +90,10 @@ class Facetec {
             FaceTecSDKStatus.INITIALIZED -> promise.rejectWith(LivenessError.SetupFailed("Already initialized"))
             else -> promise.rejectWith(LivenessError.SetupFailed(status.toString()))
         }
+    }
+
+    fun getSession(): Session? {
+        return _session
     }
 
     fun createSession(id: String, promise: PluginCall) {
@@ -218,7 +221,7 @@ class Facetec {
             }
         }
 
-        /*Handler(reactApplicationContext.mainLooper).post {
+        Handler(activity!!.mainLooper).post {
             try {
                 FaceTecSessionActivity.createAndLaunchSession(activity, processor, token.value)
             } catch (exception: Exception) {
@@ -230,7 +233,7 @@ class Facetec {
                     )
                 )
             }
-        }*/
+        }
     }
 }
 

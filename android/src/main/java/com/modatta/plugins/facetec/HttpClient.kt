@@ -16,27 +16,28 @@ val HttpClient: OkHttpClient = OkHttpClient.Builder()
         .build()
 
 fun OkHttpClient.enqueuePostRequest(
-        url: URI,
-        payload: JSONObject,
-        token: String = "",
-        deviceKeyIdentifier: String,
-        onResponse: (content: JSONObject) -> Unit,
-        onFailure: (exception: Exception) -> Unit,
-        onProgress: ((percentage: Float) -> Unit)? = null
+    url: URI,
+    payload: JSONObject,
+    token: String = "",
+    deviceKeyIdentifier: String,
+    onResponse: (content: JSONObject) -> Unit,
+    onFailure: (exception: Exception) -> Unit,
+    onProgress: ((percentage: Float) -> Unit)? = null
 ) {
     val baseBody = RequestBody.create(
-            MediaType.parse("application/json; charset=utf-8"),
-            payload.toString()
+        MediaType.parse("application/json; charset=utf-8"),
+        payload.toString()
     )
 
 
 
+
     val request = Request.Builder()
-            .url(url.toURL())
-            .header("X-Device-Key", deviceKeyIdentifier)
-            .header("X-User-Agent", FaceTecSDK.createFaceTecAPIUserAgentString(token))
-            .post(baseBody)
-            .build()
+        .url(url.toURL())
+        .header("X-Device-Key", deviceKeyIdentifier)
+        .header("X-User-Agent", FaceTecSDK.createFaceTecAPIUserAgentString(token))
+        .post(baseBody)
+        .build()
 
     newCall(request).enqueue(object : Callback {
         override fun onFailure(call: Call, e: IOException) {
@@ -61,6 +62,47 @@ fun OkHttpClient.enqueuePostRequest(
 
     })
 }
+fun OkHttpClient.enqueueGetRequest(
+    url: URI,
+    token: String = "",
+    deviceKeyIdentifier: String,
+    onResponse: (content: JSONObject) -> Unit,
+    onFailure: (exception: Exception) -> Unit,
+    onProgress: ((percentage: Float) -> Unit)? = null
+) {
+
+
+    val request = Request.Builder()
+        .url(url.toURL())
+        .header("X-Device-Key", deviceKeyIdentifier)
+        .header("X-User-Agent", FaceTecSDK.createFaceTecAPIUserAgentString(token))
+        .get()
+        .build()
+
+    newCall(request).enqueue(object : Callback {
+        override fun onFailure(call: Call, e: IOException) {
+            onFailure(e)
+        }
+
+        override fun onResponse(call: Call, response: Response) {
+            try {
+                val body = response.body()?.string()
+
+                response.body()?.close()
+
+                if (body == null) {
+                    throw Exception("Response body is null")
+                }
+
+                onResponse(JSONObject(body))
+            } catch (exception: Exception) {
+                onFailure(exception)
+            }
+        }
+
+    })
+}
+
 
 
 

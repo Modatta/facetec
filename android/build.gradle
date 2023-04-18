@@ -44,6 +44,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
+    kotlinOptions {
+        jvmTarget=11
+    }
 }
 
 repositories {
@@ -70,5 +74,4 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation "com.squareup.okhttp3:okhttp:3.12.1"
-    implementation project(":libs")
 }

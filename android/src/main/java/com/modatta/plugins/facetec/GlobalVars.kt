@@ -11,7 +11,7 @@ class GlobalVars {
     // REQUIRED
     // Available at https://dev.facetec.com/account
     // NOTE: This field is auto-populated by the FaceTec SDK Configuration Wizard.
-    var DeviceKeyIdentifier = "dqtna11GyV2TUXO2UUjUOFajxKkVkuA1"
+    var DeviceKeyIdentifier = "dNDQtlaiBQ5wgtTq5IcZN8QgCYQ7MEkF"
 
     // -------------------------------------
     // REQUIRED
