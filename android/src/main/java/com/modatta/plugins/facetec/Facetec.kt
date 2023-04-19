@@ -8,7 +8,6 @@ import android.util.Log
 import com.facetec.sdk.*
 import com.getcapacitor.Bridge
 import com.getcapacitor.PluginCall
-import com.getcapacitor.plugin.util.HttpRequestHandler.bridge
 import com.modatta.plugins.facetec.GlobalVars
 
 
