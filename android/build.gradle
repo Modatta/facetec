@@ -36,6 +36,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug { }
     }
     lintOptions {
         abortOnError false
@@ -74,4 +75,5 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation "com.squareup.okhttp3:okhttp:3.12.1"
+    implementation files('facetecsdk/facetec-sdk-9.6.19.aar')
 }
